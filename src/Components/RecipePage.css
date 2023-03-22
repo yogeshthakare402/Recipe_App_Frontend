@@ -1,0 +1,471 @@
+#homepage {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://static01.nyt.com/images/2020/04/30/dining/30substitutions/30substitutions-superJumbo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Home Page CSS */
+#home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-family: "Frank Ruhl Libre", Georgia, serif;
+    animation: popup 1s ease-in-out;
+}
+@keyframes popup{
+    from{
+        transform: translateY(100%);
+    }to{
+        transform: translateY(0%);
+    }
+}
+
+#searchHeading {
+    margin-top: 50px;
+    margin-bottom: 0px;
+    width: 50%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#searchHeading h1 {
+    margin: 0px;
+    font-size: 60px;
+    background-image: linear-gradient(50deg,
+            #8261f6 0%,
+            #c9a4f0 29%,
+            #ff1361 67%,
+            #fff800 100%);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+}
+
+@keyframes textclip {
+    from {
+        background-position: 0%;
+    }
+
+    to {
+        background-position: 200%;
+    }
+}
+
+#serachRecipe {
+    margin-top: 0px;
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    justify-content: center;
+}
+
+#serachRecipe input {
+    padding-left: 10px;
+    width: 80%;
+    height: 50px;
+    border-radius: 50px;
+}
+
+#icon {
+    margin-left: 10px;
+    font-size: xx-large;
+    border-radius: 50px;
+    color: skyblue;
+    position: absolute;
+    top: 25%;
+    right: 10%;
+}
+
+#headPara {
+    margin-top: 100px;
+    padding: 20px 0px 50px 0px;
+    width: 30%;
+    height: fit-content;
+    background-color: #ba83f6;
+    border-radius: 5px 50px 5px 50px;
+}
+
+#headPara p {
+    width: 100%;
+}
+
+#curveText {
+    margin-bottom: 20px;
+    font-size: xx-large;
+    background-image: linear-gradient(50deg,
+            #190560 0%,
+            #c9a4f0 29%,
+            #83042e 67%,
+            #605d04 100%);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+}
+
+.para-text {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.seperatedText {
+    width: 30%;
+    font-size: larger;
+    box-sizing: border-box;
+    color: #160455;
+}
+
+.seperatedText img {
+    width: 70%;
+    border-radius: 70px;
+}
+
+/* Navigation bar CSS*/
+#navbar {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(42, 48, 56);
+}
+
+#logo {
+    width: 20%;
+}
+
+#logo a {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    color: white;
+    font-family: "Frank Ruhl Libre", Georgia, serif;
+    text-decoration: none;
+}
+
+#logo img {
+    width: 15%;
+    height: 15%;
+    border-radius: 50px;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: space-between;
+}
+
+.navContainer {
+    width: 35%;
+}
+
+.navbar li {
+    width: 30%;
+}
+
+.navbar li a {
+    text-decoration: none;
+    color: white;
+    font-family: "Frank Ruhl Libre", Georgia, serif;
+}
+
+.navbar li a:hover {
+    color: lightseagreen;
+    font-size: large;
+}
+
+/* Add recipe Page CSS */
+
+#form-for-recipe {
+    width: 50%;
+    height: 600px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50px 5px 50px 5px;
+    overflow-y: scroll;
+    background-image: url("https://c1.wallpaperflare.com/preview/920/553/130/cook-healthy-food-eat.jpg");
+    color: white;
+    box-sizing: border-box;
+    animation: popupAdd 1s ease-in-out;
+}
+@keyframes popupAdd {
+    from {
+        top: 120%;
+        left: 50%;
+    }
+    to {
+        top: 50%;
+        left: 50%;
+    }
+}
+
+#form-for-recipe h1 {
+    box-sizing: border-box;
+    margin-top: 0px;
+    position: sticky;
+    top: 0px;
+    background-color: white;
+    background-image: url("https://c1.wallpaperflare.com/preview/920/553/130/cook-healthy-food-eat.jpg");
+    font-family: "Frank Ruhl Libre", Georgia, serif;
+}
+
+#form-for-recipe h2 {
+    font-family: "Frank Ruhl Libre", Georgia, serif;
+}
+
+#form {
+    box-sizing: border-box;
+    margin-left: 5%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#form label {
+    font-family: "Frank Ruhl Libre", Georgia, serif;
+    font-size: large;
+}
+
+.recipeInput {
+    margin-top: 20px;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.recipeInput input[type='text'] {
+    padding-left: 10px;
+    width: 80%;
+    height: 30px;
+    border-radius: 5px;
+    background-color: rgb(42, 48, 56);
+    color: white;
+}
+
+.ingredientList input[type='text'] {
+    background-color: rgb(42, 48, 56);
+    color: white;
+}
+
+.ingredientList input {
+    margin-top: 5px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+textarea {
+    padding: 5px;
+    background-color: rgb(42, 48, 56);
+    color: rgb(9, 174, 9);
+    border-radius: 10px;
+}
+
+#ingredient {
+    width: 70%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+#ingredient button {
+    width: 50%;
+}
+
+#form button[type="submit"] {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 70%;
+}
+
+#form button {
+    padding: 5px 10px;
+    border-radius: 50px;
+    background-color: rgb(42, 48, 56);
+    color: white;
+    font-family: "Frank Ruhl Libre", Georgia, serif;
+    font-size: large;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+/* Recipe Cards Page */
+.recipe-card-container {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-around;
+    gap: 20px;
+    font-family: "Frank Ruhl Libre", Georgia, serif;
+    animation: scale 1s ease-in-out;
+}
+
+.recipeCard {
+    box-sizing: border-box;
+    width: 300px;
+    background-color: white;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.recipeCard img {
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 30px 30px 0px 0px;
+}
+
+.card-sub-container {
+    width: 100%;
+    margin-left: 10%;
+    padding-bottom: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.rating{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* Complete Recipe */
+#completeDetails{
+    width: 50%;
+    height: 600px;
+    background-color: white;
+    border-radius: 30px;
+    overflow-y: scroll;
+    background-image: url('https://i.pinimg.com/originals/7c/b1/86/7cb18679659f791b1191bea97b74dfc0.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    animation: scale 1s ease-in-out;
+}
+@keyframes scale {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+#mainImg{
+    width: 60%;
+    border-radius: 30px;
+}
+#ingredientList{
+    box-sizing: border-box;
+    font-family: "Frank Ruhl Libre", Georgia, serif;
+}
+.ingredientList{
+    margin-left: 10%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    gap: 30px;
+    font-family: "Frank Ruhl Libre", Georgia, serif;
+}
+.ingredientList img{
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+.firstDiv{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 5px;
+}
+.secondDiv{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#desc{
+    margin-left: 10%;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: "Frank Ruhl Libre", Georgia, serif;
+}
+#btn{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#completeDetails button{
+    width: 30%;
+    padding: 5px;
+    background-color: green;
+    color: white;
+    font-size: larger;
+    margin-bottom: 10px;
+    border-radius: 50px;
+    font-family: "Frank Ruhl Libre", Georgia, serif;
+}
+#completeDetails button:hover{
+    box-shadow: 0px 0px 10px 5px greenyellow;
+}
+
+/* Favourite Page */
+
+#favHeader{
+    color: white;
+    font-family: "Frank Ruhl Libre", Georgia, serif;
+    animation: scale 1s ease-in-out;
+    background-image: linear-gradient(50deg,
+            #8261f6 0%,
+            #7a4fa8 29%,
+            #ff1361 67%,
+            #fff800 100%);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+}
