@@ -1,11 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { UseRecipeContext } from '../../ContextPages/RecipeContext';
-import CompleteRecipe from './CompleteRecipe';
 import RatingStars from './RatingStars';
 
 function Favourite() {
   const { state: { recipe } } = UseRecipeContext();
-
+  let navigate = useNavigate();
   const getCompleteERecipe = (data) => {
     navigate("/completeRecipe", { state: { data: data } })
   }
