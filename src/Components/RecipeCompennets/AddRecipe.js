@@ -1,19 +1,29 @@
 import React from 'react';
 import axios from 'axios';
+import {useNavigate} from 'react-router-dom';
 
 function AddRecipe() {
+  let navigate = useNavigate()
 
   const PostRecipe = (e) => {
     e.preventDefault();
     const form = document.getElementById("form");
     const formData = new FormData(form);
-    const values = [...formData.entries()];
+    // const values = [...formData.entries()];
     // console.log(values);
-    // console.log(formData)
+    // console.log(formData);
+    
+    let url = "https://recipe-app-oy34.onrender.com/api/recipeapi";
+    // let url = "http://localhost:8080/api/recipeapi";
 
-    axios.post("http://localhost:8080/api/recipeapi",formData)
-    .then(res=>console.log(res))
-    .catch(err=>console.log(err.message))
+    axios.post(url,formData)
+    .then(res=>{
+      console.log(res);
+        navigate("/recipe")
+    })
+    .catch(err=>{
+      alert("Oops Something went wrong!")
+      console.log(err.message)})
   }
 
   const AddInputForIngredient = () => {

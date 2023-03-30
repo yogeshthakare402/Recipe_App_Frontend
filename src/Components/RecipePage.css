@@ -4,6 +4,7 @@
     background-image: url("https://static01.nyt.com/images/2020/04/30/dining/30substitutions/30substitutions-superJumbo.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    overflow-y: scroll;
 }
 
 /* Home Page CSS */
@@ -364,8 +365,15 @@ textarea {
 }
 
 /* Complete Recipe */
+.completeRecipe{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 #completeDetails{
-    width: 50%;
+    width: 45%;
     height: 600px;
     background-color: white;
     border-radius: 30px;
@@ -468,4 +476,17 @@ textarea {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: textclip 2s linear infinite;
+}
+
+/* Search Recipe */
+
+#serachedRecipies{
+    margin-top: 20px;
+    box-sizing: border-box;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    overflow-y: scroll;
 }

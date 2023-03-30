@@ -2,19 +2,13 @@
 
 function RecipeReducer(state, action) {
     console.log(action.type)
-    // console.log(action.payload)
+    console.log(action.payload)
     switch (action.type) {
-        case "Changed_recipe":
-            return { ...state, recipe:action.payload};
-        // case "Add_To_Fav":
-        //     return { ...state, favourite:!state.favourite};
+        case "FetechedRecipe":
+            return { ...state, recipe: action.payload };
 
-        // case "Remove_From_fav":
-        //     return {
-        //         ...state, favourite: state.favourite.filter((prod) => {
-        //             return prod.id !== action.payload.id;
-        //         })
-        //     };
+        case "Changed_recipe":
+            return { ...state, recipe: action.payload };
 
         case "Clear_Fav":
             return { ...state, favourite: [] };

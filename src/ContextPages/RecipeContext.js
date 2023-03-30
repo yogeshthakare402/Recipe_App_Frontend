@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, useContext, useEffect, useRef } from 'react';
+import React, { createContext, useReducer, useContext, useEffect } from 'react';
 import RecipeReducer from './RecipeReducer';
 import axios from 'axios';
 
@@ -7,11 +7,10 @@ let recipeContextCreated = createContext();
 
 function RecipeContext({ children }) {
     //page get unmounted so data was not capturing hence used usref hook to store previous data
-    let recipeRef = useRef([]);
-    let favRef = useRef([])
+    // let recipeRef = useRef([]);
+    // let favRef = useRef([])
     const [state, dispatch] = useReducer(RecipeReducer, {
-        recipe: recipeRef,
-        favourite:favRef,
+        recipe: [],
         byQuickEasy: '',
         byType: '',
         byMealType: '',
@@ -23,20 +22,31 @@ function RecipeContext({ children }) {
     }, [])
 
     function GetRecipe() {
-        axios.get("http://localhost:8080/api/recipeapi")
+        let url = "https://recipe-app-oy34.onrender.com/api/recipeapi";
+        // let url = "http://localhost:8080/api/recipeapi";
+        axios.get(url)
             .then((res) => {
                 // console.log(res.data)
-                recipeRef.current = res.data.recipe;
-                favRef.current = res.data.recipe.filter((data)=>data.favourite===true)
-                console.log(favRef.current)
+                // recipeRef.current = res.data.recipe;
+                // favRef.current = res.data.recipe.filter((data)=>data.favourite===true)
+                // let fav = res.data.recipe.filter((data)=>data.favourite===true)
+                dispatch({
+                    type:"FetechedRecipe",
+                    payload: res.data.recipe
+                })
+                // dispatch({
+                //     type:"FavouriteRecipe",
+                //     payload: fav
+                // })
             }).catch((error) => {
                 console.error(error);
+                alert("Something went Wrong!")
             });
     }
-console.log("recipe")
-    console.log(recipeRef);
-    console.log("favour")
-    console.log(favRef);
+// console.log("recipe")
+    // console.log(recipeRef);
+    // console.log("favourite")
+    // console.log(favRef);
 
     return (
         <recipeContextCreated.Provider value={{state, dispatch}}>
