@@ -7,7 +7,7 @@ import RatingStars from './RatingStars';
 function Home() {
     const [search, setSearch] = useState("");
     const [seachedRecipe, setSearchedRecipe] = useState([])
-    const { state: { recipe } } = UseRecipeContext();
+    const { recipe} = UseRecipeContext();
     const searchRecipe = (RecipeVal) => {
         setSearch(RecipeVal);
         let rec = recipe.filter((item) => { return item.recipeName.includes(RecipeVal) || item.recipeType.includes(RecipeVal) || item.typeofMeal.includes(RecipeVal) })

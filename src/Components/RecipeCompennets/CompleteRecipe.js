@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLocation, useNavigate} from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import RatingStars from './RatingStars';
 import axios from 'axios';
 
@@ -14,7 +14,7 @@ function CompleteRecipe() {
 
     let url = "https://recipe-app-oy34.onrender.com/";
     // let url = "http://localhost:8080/";
-    
+
     // console.log(data)
     let ingredients = [...data.ingredientName]
     //to remove 1 image which is final product image
@@ -54,7 +54,11 @@ function CompleteRecipe() {
         <div className='completeRecipe'>
             <div id='completeDetails'>
                 <div id='DetailsHeader'>
-                    <img id='mainImg' src={url + data.IngredientImages[0].path} alt={data.IngredientImages[0].originalname} />
+                    {data.IngredientImages[0] ? (
+                        <img id='mainImg' src={url + data.IngredientImages[0].path} alt={data.IngredientImages[0].originalname} />
+                    ) : (
+                        <div>No Image Found</div>
+                    )}
                     <h1>{data.recipeName}</h1>
                 </div>
                 <div id='ingredientList'>
@@ -67,7 +71,8 @@ function CompleteRecipe() {
                                     <div>{array[0]}</div>
                                 </div>
                                 <div className='secondDiv'>
-                                    <img src={url + array[1].path} alt={array[1].originalname} />
+                                    {array.length > 2 && <img src={url + array[1].path} alt={array[1].originalname} />}
+
                                 </div>
                             </div>
                         })}
@@ -93,7 +98,7 @@ function CompleteRecipe() {
                     /></div>
                 </div>
                 <div id='btn'>
-                    <button type='button' id='return' onClick={()=>navigate(-1)} >Return</button>
+                    <button type='button' id='return' onClick={() => navigate(-1)} >Return</button>
                     {!newChanges ? (<button type='button' onClick={() => {
                         updateFavourite(data._id);
                         setNewChanges(!newChanges);

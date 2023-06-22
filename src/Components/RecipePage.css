@@ -340,6 +340,7 @@ textarea {
     background-color: white;
     border-radius: 30px;
     cursor: pointer;
+    position: relative;
 }
 
 .recipeCard img {
@@ -363,6 +364,20 @@ textarea {
     justify-content: space-between;
     gap: 30px;
 }
+.deleteBtn{
+    display: none;
+}
+.recipeCard:hover{
+    .deleteBtn{
+        display: block;
+        position: absolute;
+        top: 0px;
+        background-color: #ff1361;
+        padding: 5px;
+        border-radius: 50%;
+    }
+}
+
 
 /* Complete Recipe */
 .completeRecipe{

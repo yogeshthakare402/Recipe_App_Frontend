@@ -5,6 +5,7 @@ function RecipeReducer(state, action) {
     console.log(action.payload)
     switch (action.type) {
         case "FetechedRecipe":
+            console.log(action.payload)
             return { ...state, recipe: action.payload };
 
         case "Changed_recipe":

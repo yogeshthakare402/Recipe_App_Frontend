@@ -4,8 +4,9 @@ import { UseRecipeContext } from '../../ContextPages/RecipeContext';
 import RatingStars from './RatingStars';
 
 function Favourite() {
-  const { state: { recipe } } = UseRecipeContext();
+  const { recipe } = UseRecipeContext();
   let navigate = useNavigate();
+  
   const getCompleteERecipe = (data) => {
     navigate("/completeRecipe", { state: { data: data } })
   }
