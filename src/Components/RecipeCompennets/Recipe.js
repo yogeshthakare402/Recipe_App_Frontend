@@ -15,10 +15,10 @@ function Recipe() {
   }
   const deleteRecipe = (data) => {
     // e.preventDefault();
-    console.log(data._id);
+    // console.log(data._id);
     let id = data._id
-    let urlDelete = `https://recipe-app-oy34.onrender.com/api/recipeapi/:${id}`;
-    // let urlPut = `http://localhost:8080/api/recipeapi/:${id}`;
+    let urlDelete = `https://recipe-app-oy34.onrender.com/api/recipeapi/${id}`;
+    // let urlPut = `http://localhost:8080/api/recipeapi/${id}`;
     axios.delete(urlDelete)
       .then((res) => { console.log(res) })
       .catch((err) => { console.log(err) })

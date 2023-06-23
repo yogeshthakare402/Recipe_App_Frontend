@@ -1,9 +1,11 @@
 #homepage {
     width: 100vw;
     height: 100vh;
+    background-color: rgba(29, 98, 5, 0.459);
     background-image: url("https://static01.nyt.com/images/2020/04/30/dining/30substitutions/30substitutions-superJumbo.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-blend-mode: multiply;
     overflow-y: scroll;
 }
 
@@ -372,10 +374,20 @@ textarea {
         display: block;
         position: absolute;
         top: 0px;
-        background-color: #ff1361;
+        left: 15px;
+        color: red;
+        border: 1px solid red;
         padding: 5px;
-        border-radius: 50%;
+        border-radius: 10px;
+        background-clip: text;
+    };
+    .deleteBtn:hover{
+        background-clip: border-box;
+        background-color: red;
+        color: black;
+        font-weight: bold;
     }
+    box-shadow: 0px 0px 10px 10px green;
 }
 
 

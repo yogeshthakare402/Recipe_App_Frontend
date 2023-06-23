@@ -30,8 +30,8 @@ function CompleteRecipe() {
     // console.log(desc[0])
     const updateFavourite = (id) => {
         console.log(id)
-        let urlPut = `https://recipe-app-oy34.onrender.com/api/recipeapi/:${id}`;
-        // let urlPut = `http://localhost:8080/api/recipeapi/:${id}`;
+        let urlPut = `https://recipe-app-oy34.onrender.com/api/recipeapi/${id}`;
+        // let urlPut = `http://localhost:8080/api/recipeapi/${id}`;
         axios.patch(urlPut, { favourite: !data.favourite })
             .then((res) => { console.log(res) })
             .catch((err) => { console.log(err) })
@@ -40,8 +40,8 @@ function CompleteRecipe() {
     const updateRating = (id, num) => {
         // console.log(id)
         // console.log(num)
-        let urlPut = `https://recipe-app-oy34.onrender.com/api/recipeapi/:${id}`;
-        // let urlPut = `http://localhost:8080/api/recipeapi/:${id}`;
+        let urlPut = `https://recipe-app-oy34.onrender.com/api/recipeapi/${id}`;
+        // let urlPut = `http://localhost:8080/api/recipeapi/${id}`;
         axios.patch(urlPut, { rating: num })
             .then((res) => { console.log(res) })
             .catch((err) => { console.log(err) })

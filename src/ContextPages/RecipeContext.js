@@ -7,14 +7,6 @@ let recipeContextCreated = createContext();
 
 function RecipeContext({ children }) {
 
-    // const [state, dispatch] = useReducer(RecipeReducer, {
-    //     recipe: [],
-    //     byQuickEasy: '',
-    //     byType: '',
-    //     byMealType: '',
-    //     byRating: 0,
-    //     searchQuery: ''
-    // })
     const [recipe, setMenu] = useState([])
     useEffect(() => {
         GetRecipe();
@@ -26,10 +18,6 @@ function RecipeContext({ children }) {
         axios.get(url)
             .then((res) => {
                 setMenu(res.data.recipe);
-                // dispatch({
-                //     type:"FetechedRecipe",
-                //     payload: res.data.recipe
-                // })
             }).catch((error) => {
                 console.error(error);
                 alert("Something went Wrong!")
